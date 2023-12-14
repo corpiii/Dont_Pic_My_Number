@@ -17,7 +17,7 @@ void main() {
   Set<int> yesterdayNumber = yesterdayList.map((e) => int.parse(e)).toSet();
   print('어제 뽑혔던 번호는 $yesterdayNumber 입니다.');
 
-  for (int i = 1; i <= 5; i++) {
+  for (int i = 1; i <= 2; i++) {
     Set<int> set = {};
     while (result.length < 5) {
       num = Random().nextInt(38) + 1;
