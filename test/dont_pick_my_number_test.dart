@@ -1,4 +1,4 @@
-import 'package:dont_pick_my_number/dont_pick_my_number.dart';
+import 'package:dont_pick_my_number/memo.dart';
 import 'package:test/test.dart';
 
 void main() {
