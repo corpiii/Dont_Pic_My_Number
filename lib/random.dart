@@ -1,10 +1,8 @@
 import 'dart:math';
-import 'package:collection/collection.dart';
 
-List<int> randomNumber() {
+List<int> randomNumber(List<int> choiceNumbers) {
   List<int> randomNumbers = [];
   List<int> noNumbers = [1, 5, 10, 14, 19, 25];
-  List<int> choiceNumbers = [];
   while (randomNumbers.length < 5) {
     int number = Random().nextInt(39) + 1;
     if (!randomNumbers.contains(number) &&
@@ -12,8 +10,8 @@ List<int> randomNumber() {
         !choiceNumbers.contains(number)) {
       randomNumbers.add(number);
     }
-    randomNumbers.sort();
   }
+  randomNumbers.sort();
   choiceNumbers.addAll(randomNumbers);
   return randomNumbers;
   // 왜 retrun 뒤에 sort는 안되는 것인가?
@@ -22,10 +20,12 @@ List<int> randomNumber() {
 }
 
 roundNumber(int round) {
+  List<int> choiceNumbers = [];
   for (int i = 1; i <= round; i++) {
     String numberPrint =
-        randomNumber().map((numberPrint) => '$numberPrint번').join(', ');
+        randomNumber(choiceNumbers).map((numberPrint) => '$numberPrint번').join(', ');
     print('$i회차에서 뽑힌 번호들은 $numberPrint 입니다');
+    print(choiceNumbers);
   }
 }
 
