@@ -14,9 +14,6 @@ List<int> randomNumber(List<int> choiceNumbers) {
   randomNumbers.sort();
   choiceNumbers.addAll(randomNumbers);
   return randomNumbers;
-  // 왜 retrun 뒤에 sort는 안되는 것인가?
-  // randomNumbers 는 List라서 가능해야 하는거 아닌가? 왜 retrun전에 randomNumbers.sort는 가능한가?
-  // sort의 타입이 void라서 안되는 것인가..?
 }
 
 roundNumber(int round) {
@@ -25,6 +22,9 @@ roundNumber(int round) {
     String numberPrint =
         randomNumber(choiceNumbers).map((numberPrint) => '$numberPrint번').join(', ');
     print('$i회차에서 뽑힌 번호들은 $numberPrint 입니다');
+    if (i% 2== 0) {
+      choiceNumbers.clear();
+    }
     print(choiceNumbers);
   }
 }
